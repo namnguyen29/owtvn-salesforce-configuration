@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <members>Subscription__c</members>
+    <name>CustomObject</name>
+  </types>
+  <types>
+    <members>Subscription__c.Subscriber__c</members>
+    <members>Subscription__c.Subscription_Active__c</members>
+    <members>Subscription__c.Subscription_Date__c</members>
+    <members>Subscription__c.Subscription_ID__c</members>
+    <name>CustomField</name>
+  </types>
+  <types>
+    <members>OWTVN Minimum Access</members>
+    <members>OWTVN System Administrator</members>
+    <name>Profile</name>
+  </types>
+  <version>66.0</version>
+</Package>
