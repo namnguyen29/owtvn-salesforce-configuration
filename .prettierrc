@@ -1,10 +1,16 @@
 {
   "trailingComma": "none",
-  "plugins": [
-    "prettier-plugin-apex",
-    "@prettier/plugin-xml"
-  ],
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrowParens": "always",
+  "printWidth": 120,
+  "apexInsertFinalNewline": false,
+  "plugins": ["prettier-plugin-apex", "@prettier/plugin-xml"],
   "overrides": [
+    {
+      "files": "**/*.{cls,trigger}",
+      "options": { "parser": "apex", "tabWidth": 4 }
+    },
     {
       "files": "**/lwc/**/*.html",
       "options": { "parser": "lwc" }
