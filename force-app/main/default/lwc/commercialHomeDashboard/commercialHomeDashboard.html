@@ -1,0 +1,60 @@
+<template>
+  <section class="dashboard-shell" aria-labelledby="commercial-dashboard-heading">
+    <header class="dashboard-header">
+      <p class="eyebrow">OWD Commercial</p>
+      <h1 id="commercial-dashboard-heading">Commercial Overview</h1>
+      <p class="intro">Review the latest accounts, contacts, assets, and campaigns from one landing page.</p>
+    </header>
+
+    <div class="dashboard-grid">
+      <template for:each={panels} for:item="panel">
+        <section key={panel.key} class="dashboard-panel" aria-labelledby={panel.headingId}>
+          <div class="panel-count" aria-live="polite">
+            <div>
+              <h2 id={panel.headingId}>{panel.label}</h2>
+              <p class="count-caption">Total records</p>
+            </div>
+            <div class="count-actions">
+              <p class="count-value">{panel.count}</p>
+              <lightning-button
+                data-panel-key={panel.key}
+                label="Reset"
+                variant="neutral"
+                onclick={handleReset}
+              ></lightning-button>
+            </div>
+          </div>
+
+          <p class="slds-assistive-text">{panel.summaryText}</p>
+
+          <template lwc:if={panel.isLoading}>
+            <div class="panel-state">
+              <lightning-spinner alternative-text={panel.label} size="small"></lightning-spinner>
+            </div>
+          </template>
+
+          <template lwc:elseif={panel.hasError}>
+            <div class="panel-state panel-state_error" role="alert">{panel.errorMessage}</div>
+          </template>
+
+          <template lwc:elseif={panel.showEmpty}>
+            <div class="panel-state">{panel.emptyMessage}</div>
+          </template>
+
+          <template lwc:else>
+            <lightning-datatable
+              data-panel-key={panel.key}
+              key-field="id"
+              data={panel.rows}
+              columns={panel.columns}
+              hide-checkbox-column
+              sorted-by={panel.sortBy}
+              sorted-direction={panel.sortDirection}
+              onsort={handleSort}
+            ></lightning-datatable>
+          </template>
+        </section>
+      </template>
+    </div>
+  </section>
+</template>
