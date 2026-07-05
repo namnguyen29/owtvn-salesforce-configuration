@@ -5,11 +5,24 @@
     <name>CustomObject</name>
   </types>
   <types>
+    <members>OWD_Commercial</members>
+    <name>CustomApplication</name>
+  </types>
+  <types>
     <members>Subscription__c.Subscriber__c</members>
     <members>Subscription__c.Subscription_Active__c</members>
     <members>Subscription__c.Subscription_Date__c</members>
     <members>Subscription__c.Subscription_ID__c</members>
     <name>CustomField</name>
+  </types>
+  <types>
+    <members>OWD_Commercial_Contact_Record_Page</members>
+    <members>OWD_Commercial_Home_Page</members>
+    <name>FlexiPage</name>
+  </types>
+  <types>
+    <members>commercialHomeDashboard</members>
+    <name>LightningComponentBundle</name>
   </types>
   <types>
     <members>OWTVN Minimum Access</members>
