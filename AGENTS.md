@@ -11,8 +11,6 @@ Use `config/` for scratch org definitions such as `config/project-scratch-def.js
 - `npm run lint` checks JavaScript in Aura and LWC bundles with ESLint.
 - `npm test` runs the configured unit-test entry point.
 - `npm run test:unit`, `npm run test:unit:watch`, `npm run test:unit:debug`, and `npm run test:unit:coverage` run LWC Jest tests in normal, watch, debug, and coverage modes.
-- `npm run prettier` formats supported source files, including Apex and LWC.
-- `npm run prettier:verify` checks formatting without rewriting files.
 - `sf project deploy start` deploys local metadata to an authorized org.
 - `sf project retrieve start` pulls metadata changes back into `force-app/`.
 

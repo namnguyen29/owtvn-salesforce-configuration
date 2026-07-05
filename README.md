@@ -7,6 +7,10 @@ This project template gets you started with the tools and structure you need to 
 ```
 quoc-nam.nguyen@agentdev.com
 ```
+For mini user
+```
+quoc-nam.nguyen@agentdev.com.mini
+```
 
 ## Package validation
 

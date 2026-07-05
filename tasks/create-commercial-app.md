@@ -73,6 +73,7 @@ On the **Contact Lightning Record Page**, add the **Assets** related list so use
 
   - OWTVN System Administrator
   - OWTVN Minimum Access
+  - System Administrator
 
 - **OWD Commercial** is configured as the default app for users with these two profiles upon login.
 - A custom Home Page is created and assigned to the app.
