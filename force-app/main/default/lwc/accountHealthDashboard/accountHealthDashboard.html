@@ -1,0 +1,97 @@
+<template>
+  <section class="health-shell" aria-labelledby="account-health-heading" aria-busy={isRefreshing}>
+    <header class="health-hero">
+      <div>
+        <p class="eyebrow">Account health</p>
+        <h2 id="account-health-heading">{accountName}</h2>
+        <p class="hero-copy">Revenue, coverage, and pipeline signals for this account in one place.</p>
+      </div>
+
+      <div class="hero-actions">
+        <span class={healthBadgeClass}>{displayHealthStatus}</span>
+        <lightning-button
+          label={refreshButtonLabel}
+          icon-name="utility:refresh"
+          variant="neutral"
+          onclick={handleRefresh}
+          disabled={isRefreshDisabled}
+        ></lightning-button>
+      </div>
+    </header>
+
+    <template lwc:if={isInitialLoading}>
+      <div class="state-panel">
+        <lightning-spinner alternative-text="Loading account health" size="small"></lightning-spinner>
+      </div>
+    </template>
+
+    <template lwc:elseif={hasError}>
+      <div class="state-panel state-panel_error" role="alert">{errorMessage}</div>
+    </template>
+
+    <template lwc:elseif={hasData}>
+      <div class="metrics-grid">
+        <section class="metric-card" aria-labelledby="account-basics-heading">
+          <div class="card-heading">
+            <h3 id="account-basics-heading">Account basics</h3>
+            <p>Core account information from the current record.</p>
+          </div>
+
+          <dl class="detail-list">
+            <div class="detail-row">
+              <dt>Account Name</dt>
+              <dd>{accountName}</dd>
+            </div>
+            <div class="detail-row">
+              <dt>Industry</dt>
+              <dd>{industryValue}</dd>
+            </div>
+            <div class="detail-row">
+              <dt>Annual Revenue</dt>
+              <dd>
+                <template lwc:if={annualRevenueLabel}>
+                  {annualRevenueLabel}
+                </template>
+                <template lwc:else>
+                  <lightning-formatted-number
+                    value={annualRevenueValue}
+                    format-style="currency"
+                    currency-code="USD"
+                    maximum-fraction-digits="0"
+                  ></lightning-formatted-number>
+                </template>
+              </dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="metric-card" aria-labelledby="relationship-heading">
+          <div class="card-heading">
+            <h3 id="relationship-heading">Relationship metrics</h3>
+            <p>Related Contacts and Opportunities connected to this account.</p>
+          </div>
+
+          <div class="count-grid">
+            <article class="count-tile">
+              <span class="count-label">Contacts</span>
+              <span class="count-value">{contactCountValue}</span>
+            </article>
+            <article class="count-tile">
+              <span class="count-label">Opportunities</span>
+              <span class="count-value">{opportunityCountValue}</span>
+            </article>
+          </div>
+
+          <p class="status-summary">{healthSummary}</p>
+
+          <template lwc:if={isRefreshing}>
+            <div class="refresh-state" aria-live="polite">
+              <lightning-spinner alternative-text="Refreshing account health" size="small"></lightning-spinner>
+              <span>Refreshing dashboard data...</span>
+            </div>
+          </template>
+        </section>
+      </div>
+    </template>
+  </section>
+</template>

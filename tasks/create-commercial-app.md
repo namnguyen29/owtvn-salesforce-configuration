@@ -24,7 +24,7 @@ The **OWD Commercial** app should be visible **only** to users with the followin
 
 - OWTVN System Administrator
 - OWTVN Minimum Access
-
+- System Administrator
 No other profiles should have access to this app.
 
 Additionally, configure the app as the **default landing app** for users assigned to these two profiles so that **OWD Commercial** is the first app displayed after they log in to the org.
@@ -73,6 +73,7 @@ On the **Contact Lightning Record Page**, add the **Assets** related list so use
 
   - OWTVN System Administrator
   - OWTVN Minimum Access
+  - System Administrator
 
 - **OWD Commercial** is configured as the default app for users with these two profiles upon login.
 - A custom Home Page is created and assigned to the app.

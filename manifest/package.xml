@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
-    <members>Subscription__c</members>
-    <name>CustomObject</name>
+    <members>AccountHealthDashboardController</members>
+    <members>AccountHealthDashboardControllerTest</members>
+    <members>TestDataFactory</members>
+    <name>ApexClass</name>
   </types>
   <types>
-    <members>OWD_Commercial</members>
-    <name>CustomApplication</name>
+    <members>accountHealthDashboard</members>
+    <members>commercialHomeDashboard</members>
+    <name>LightningComponentBundle</name>
+  </types>
+  <types>
+    <members>Subscription__c</members>
+    <name>CustomObject</name>
   </types>
   <types>
     <members>Subscription__c.Subscriber__c</members>
@@ -16,18 +23,13 @@
     <name>CustomField</name>
   </types>
   <types>
-    <members>OWD_Commercial_Contact_Record_Page</members>
-    <members>OWD_Commercial_Home_Page</members>
-    <name>FlexiPage</name>
-  </types>
-  <types>
-    <members>commercialHomeDashboard</members>
-    <name>LightningComponentBundle</name>
-  </types>
-  <types>
     <members>OWTVN Minimum Access</members>
     <members>OWTVN System Administrator</members>
     <name>Profile</name>
+  </types>
+  <types>
+    <members>OWD_Lightning_Experience</members>
+    <name>PermissionSet</name>
   </types>
   <version>66.0</version>
 </Package>

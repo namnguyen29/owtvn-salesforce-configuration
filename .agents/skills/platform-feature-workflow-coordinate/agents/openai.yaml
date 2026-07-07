@@ -1,4 +1,4 @@
 interface:
   display_name: "Salesforce Workflow Coordinator"
   short_description: "Coordinate end-to-end Salesforce feature work"
-  default_prompt: "Use $platform-feature-workflow-coordinate to plan and implement a Salesforce feature across metadata, Apex, tests, and deployment."
+  default_prompt: "Use $platform-feature-workflow-coordinate to analyze a Salesforce ticket, coordinate metadata and code work, validate readiness, and hand deployment to the developer."

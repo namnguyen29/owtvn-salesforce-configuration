@@ -200,18 +200,37 @@ export default class CommercialHomeDashboard extends LightningElement {
   async handleReset(event) {
     const panelKey = event.currentTarget.dataset.panelKey;
     const state = this.panelState[panelKey];
-
-    this.setPanelState(panelKey, {
+    const resetState = {
       ...state,
       isLoading: Boolean(state.wiredResult),
       errorMessage: "",
       sortBy: DEFAULT_SORT_BY,
       sortDirection: DEFAULT_SORT_DIRECTION,
       rows: this.sortRows(state.rawRows, DEFAULT_SORT_BY, DEFAULT_SORT_DIRECTION)
-    });
+    };
 
-    if (state.wiredResult) {
+    this.setPanelState(panelKey, resetState);
+
+    if (!state.wiredResult) {
+      return;
+    }
+
+    try {
       await refreshApex(state.wiredResult);
+    } catch (error) {
+      this.setPanelState(panelKey, {
+        ...this.panelState[panelKey],
+        errorMessage: this.reduceErrors(error)
+      });
+    } finally {
+      const refreshedState = this.panelState[panelKey];
+
+      if (refreshedState.isLoading) {
+        this.setPanelState(panelKey, {
+          ...refreshedState,
+          isLoading: false
+        });
+      }
     }
   }
 
