@@ -2,5 +2,5 @@ const { jestConfig } = require('@salesforce/sfdx-lwc-jest/config');
 
 module.exports = {
     ...jestConfig,
-    modulePathIgnorePatterns: ['<rootDir>/.localdevserver', 'force-app/main/default/lwc/']
+    modulePathIgnorePatterns: ['<rootDir>/.localdevserver']
 };

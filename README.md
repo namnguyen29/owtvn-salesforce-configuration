@@ -2,10 +2,18 @@
 
 This project template gets you started with the tools and structure you need to build Salesforce applications using source control, scratch orgs, and the Salesforce CLI.
 
-## Org credential
+## Domain
 
 ```
-quoc-nam.nguyen@agentdev.com
+owtvnpoc-dev-ed.develop.my.salesforce.com
+```
+
+## Org credential
+
+Admin
+
+```
+quocnam.nguyen@owtvn.com.dev
 ```
 
 ## Package validation

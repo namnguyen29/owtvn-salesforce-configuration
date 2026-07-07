@@ -4,6 +4,10 @@
   "useTabs": false,
   "arrowParens": "always",
   "printWidth": 120,
+  "semi": true,
+  "endOfLine": "lf",
+  "bracketSameLine": true,
+  "bracketSpacing": true,
   "apexInsertFinalNewline": false,
   "plugins": ["prettier-plugin-apex", "@prettier/plugin-xml"],
   "overrides": [
