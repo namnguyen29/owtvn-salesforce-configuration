@@ -1,0 +1,55 @@
+<template>
+  <section class="summary-shell" aria-labelledby="warranty-claim-summary-heading" aria-busy={isRefreshing}>
+    <header class="summary-header">
+      <div>
+        <p class="eyebrow">Warranty operations</p>
+        <h2 id="warranty-claim-summary-heading">Warranty Claim Summary</h2>
+        <p class="scope-copy">{scopeCopy}</p>
+      </div>
+
+      <lightning-button
+        label={refreshLabel}
+        icon-name="utility:refresh"
+        variant="neutral"
+        onclick={handleRefresh}
+        disabled={isRefreshDisabled}
+      ></lightning-button>
+    </header>
+
+    <template lwc:if={isLoading}>
+      <div class="state-panel">
+        <lightning-spinner alternative-text="Loading warranty claim summary" size="small"></lightning-spinner>
+      </div>
+    </template>
+
+    <template lwc:elseif={hasError}>
+      <div class="state-panel state-panel_error" role="alert">{errorMessage}</div>
+    </template>
+
+    <template lwc:elseif={hasData}>
+      <div class="metrics-grid">
+        <article class="metric-card">
+          <span class="metric-label">Total Claims</span>
+          <span class="metric-value" data-metric="total">{totalClaims}</span>
+        </article>
+
+        <article class="metric-card metric-card_success">
+          <span class="metric-label">Approved Claims</span>
+          <span class="metric-value" data-metric="approved">{approvedClaims}</span>
+        </article>
+
+        <article class="metric-card metric-card_pending">
+          <span class="metric-label">Pending / In Progress</span>
+          <span class="metric-value" data-metric="pending">{pendingClaims}</span>
+        </article>
+      </div>
+
+      <template lwc:if={isRefreshing}>
+        <div class="refresh-state" aria-live="polite">
+          <lightning-spinner alternative-text="Refreshing warranty claim summary" size="small"></lightning-spinner>
+          <span>Refreshing claim statistics...</span>
+        </div>
+      </template>
+    </template>
+  </section>
+</template>

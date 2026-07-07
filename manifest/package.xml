@@ -4,11 +4,15 @@
     <members>AccountHealthDashboardController</members>
     <members>AccountHealthDashboardControllerTest</members>
     <members>TestDataFactory</members>
+    <members>WarrantyClaimSummaryController</members>
+    <members>WarrantyClaimSummaryControllerTest</members>
+    <members>WarrantyClaimTestDataFactory</members>
     <name>ApexClass</name>
   </types>
   <types>
     <members>accountHealthDashboard</members>
     <members>commercialHomeDashboard</members>
+    <members>warrantyClaimSummary</members>
     <name>LightningComponentBundle</name>
   </types>
   <types>
@@ -17,6 +21,7 @@
   </types>
   <types>
     <members>Subscription__c</members>
+    <members>Warranty_Claim__c</members>
     <name>CustomObject</name>
   </types>
   <types>
@@ -29,6 +34,10 @@
     <members>Subscription__c.Subscription_Active__c</members>
     <members>Subscription__c.Subscription_Date__c</members>
     <members>Subscription__c.Subscription_ID__c</members>
+    <members>Warranty_Claim__c.Claim_Amount__c</members>
+    <members>Warranty_Claim__c.Claim_Date__c</members>
+    <members>Warranty_Claim__c.Customer__c</members>
+    <members>Warranty_Claim__c.Status__c</members>
     <name>CustomField</name>
   </types>
   <types>
@@ -39,7 +48,12 @@
   </types>
   <types>
     <members>OWD_Lightning_Experience</members>
+    <members>Warranty_Claim_User</members>
     <name>PermissionSet</name>
+  </types>
+  <types>
+    <members>Warranty_Claim__c</members>
+    <name>CustomTab</name>
   </types>
   <version>66.0</version>
 </Package>

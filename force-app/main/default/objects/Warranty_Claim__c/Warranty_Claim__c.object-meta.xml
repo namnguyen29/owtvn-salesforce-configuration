@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Warranty Claim object tracks customer warranty requests linked to Accounts. It captures Status (New, In Progress, Approved, Rejected), Claim Date, Claim Amount, and Customer. Commonly used for service-triage visibility, approval tracking, and reimbursement reporting.</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <label>Warranty Claim</label>
+    <nameField>
+        <displayFormat>WC-{0000}</displayFormat>
+        <label>Warranty Claim Number</label>
+        <startingNumber>1</startingNumber>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Warranty Claims</pluralLabel>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
