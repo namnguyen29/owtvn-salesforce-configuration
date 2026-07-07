@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Links the warranty claim to the customer account associated with the request.</description>
+    <inlineHelpText>Choose the customer account that owns this warranty claim.</inlineHelpText>
+    <label>Customer</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Warranty Claims</relationshipLabel>
+    <relationshipName>WarrantyClaims</relationshipName>
+    <type>Lookup</type>
+</CustomField>
