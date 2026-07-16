@@ -16,6 +16,12 @@ Admin
 quocnam.nguyen@owtvn.com.dev
 ```
 
+Integration User
+
+```
+quocnam.integration@owtvn.com.dev
+```
+
 ## Package validation
 
 ```bash
